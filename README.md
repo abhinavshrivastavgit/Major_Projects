@@ -18,22 +18,22 @@ Each project here is a micro-simulation of real-world AI PM challenges:
 ### 🏥 Robot Health Monitor (`robot_health.py`)
 * **Problem:** Proactive maintenance is required to prevent downtime in AI-integrated hardware.
 * **Solution:** Threshold-based logic to monitor system vitals and trigger status alerts (CPU/RAM).
-* **Documentation:** [View Robot Health Logic](robot_health.txt)
+* **Documentation:** Inside the folder
 
 ### 📦 Inventory Lifecycle Manager (`inventory_manager.py`)
 * **Problem:** Manual tracking of high-demand AI hardware leads to stock inaccuracies.
 * **Solution:** A dynamic inventory system managing chip lifecycles (A100, H100, B100) using list manipulation.
-* **Documentation:** [View Inventory Logic](inventory_manager.txt)
+* **Documentation:** Inside the folder
 
 ### 📊 Feature Ranking Engine (`ranking_number.py`)
 * **Problem:** Product backlogs often lack objective numerical prioritization.
 * **Solution:** A script that processes and ranks datasets to identify high-priority features.
-* **Documentation:** [View Ranking Logic](ranking_number.txt)
+* **Documentation:** Inside the folder
 
 ### 🔢 Metric Extractor (`largest_number.py`)
 * **Problem:** Need quick identification of peak performance values from raw data.
 * **Solution:** Comparison logic to instantly isolate the highest value in a dataset for A/B testing metrics.
-* **Documentation:** [View Metric Logic](largest_number.txt)
+* **Documentation:** Inside the folder
 
 ---
 
