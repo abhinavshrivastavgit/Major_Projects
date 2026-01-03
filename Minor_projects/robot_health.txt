@@ -1,0 +1,29 @@
+=====================================================
+PROJECT: Robot Health & System Diagnostic Monitor
+AUTHOR: Abhinav Shrivastav
+=====================================================
+
+--- OVERVIEW ---
+This diagnostic tool simulates real-time health monitoring for 
+AI-driven robotics or edge-computing hardware. It translates 
+raw system telemetry into actionable alerts, ensuring high 
+availability and "Quality of Service" (QoS).
+
+--- TECHNICAL LOGIC ---
+1. TELEMETRY: Uses the 'psutil' library to pull real-time CPU and 
+   RAM metrics.
+2. THRESHOLD MANAGEMENT: Implements conditional "Guardrails":
+   - CPU > 80%: Identifies processing bottlenecks.
+   - RAM > 85%: Identifies crash risks due to memory leaks.
+3. AUTOMATION: Configured to run iterative checks (polling) 
+   to simulate continuous system monitoring.
+
+--- PM VALUE PROPOSITION ---
+As an AI PM, system reliability is a key product metric. This 
+script demonstrates the logic required to build "Self-Healing" 
+systems or proactive alerting dashboards that reduce system 
+downtime and improve user trust.
+
+--- DEPENDENCIES ---
+- Python 'psutil' library
+=====================================================
