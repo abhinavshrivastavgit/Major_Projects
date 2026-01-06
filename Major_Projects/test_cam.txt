@@ -1,0 +1,39 @@
+================================================================
+PROJECT: AI GESTURE-BASED HUMAN-COMPUTER INTERACTION (HCI)
+FILE: test_cam.py (Hardware Diagnostic Tool)
+ROLE: Hardware Verification & Troubleshooting
+================================================================
+
+1. OVERVIEW
+This is a lightweight diagnostic utility used to verify the 
+connection between the Python environment and the physical 
+camera hardware. It bypasses all AI processing (MediaPipe) to 
+isolate hardware issues from software bugs [cite: 2026-01-04].
+
+2. KEY FEATURES
+A. DirectShow Integration:
+- Uses 'cv2.CAP_DSHOW' to force the Windows video API to 
+  establish a direct handshake with the webcam [cite: 2026-01-04].
+
+B. Status Monitoring:
+- Includes a conditional check ('if success') to confirm if 
+  the camera is actually sending a valid data array [cite: 2026-01-04].
+- Provides terminal feedback ("Hardware still not sending data") 
+  if the stream is blocked or disconnected [cite: 2026-01-04].
+
+3. FUNCTIONAL LOGIC
+- Frame Capture: Continuously attempts to grab raw BGR frames 
+  from the default camera index (0) [cite: 2026-01-04].
+- Display: Opens a window named "Test" to show the live, 
+  unprocessed camera feed [cite: 2026-01-04].
+- Resource Management: Properly releases the camera hardware 
+  and closes all windows upon exit to prevent "Ghost Processes" 
+  from locking the camera for other apps [cite: 2026-01-04].
+
+4. TROUBLESHOOTING STEPS
+- If the window is black: The camera is likely being used by 
+  another application (Zoom, Chrome, etc.) [cite: 2026-01-04].
+- If it prints "Hardware still...": Check the camera privacy 
+  settings in Windows or the physical privacy slider [cite: 2026-01-04].
+- Exit: Press 'q' while the Test window is focused.
+================================================================
