@@ -1,0 +1,46 @@
+================================================================
+PROJECT: AI GESTURE-BASED HUMAN-COMPUTER INTERACTION (HCI)
+FILE: HandTrackingModule.py
+ROLE: Technical Engine / Core Module
+================================================================
+
+1. OVERVIEW
+The HandTrackingModule is a reusable Python class that abstracts 
+MediaPipe's hand landmark detection. Its purpose is to turn raw 
+video frames into structured coordinate data [cite: 2026-01-04].
+
+2. CLASS: HandDetector
+This class handles the initialization and processing of the AI model.
+
+A. Initialization (__init__):
+- mode: Sets whether to treat images as a stream or individuals [cite: 2026-01-04].
+- max_hands: Number of hands to detect (Default: 2) [cite: 2026-01-04].
+- model_complexity: Balance between speed and accuracy (0 or 1) [cite: 2026-01-04].
+- detection_con: 0.5 (AI must be 50% sure it sees a hand) [cite: 2026-01-04].
+- track_con: 0.5 (AI must be 50% sure it is still the same hand) [cite: 2026-01-04].
+
+B. Method: find_hands(img, draw=True)
+- Converts BGR pixels to RGB for the AI model [cite: 2026-01-04].
+- Draws the 21-point skeletal connection map on the screen [cite: 2026-01-04].
+
+C. Method: get_position(img, hand_no=0, draw=True)
+- Extracts (x, y) coordinates for all 21 points [cite: 2026-01-04].
+- Multiplies normalized AI data by screen width/height to get pixels [cite: 2026-01-04].
+- Highlights ID 8 (Index Finger Tip) for visual tracking [cite: 2026-01-04].
+
+3. DATA DICTIONARY
+The 'lm_list' contains 21 points. Key landmarks include:
+- ID 0: Wrist
+- ID 4: Thumb Tip
+- ID 8: Index Finger Tip (Used as primary cursor)
+- ID 12: Middle Finger Tip
+
+4. USAGE
+import cv2
+from HandTrackingModule import HandDetector
+
+detector = HandDetector()
+# ... inside a while loop ...
+img = detector.find_hands(img)
+lm_list = detector.get_position(img)
+================================================================

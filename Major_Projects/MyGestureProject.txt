@@ -1,0 +1,40 @@
+================================================================
+PROJECT: AI GESTURE-BASED HUMAN-COMPUTER INTERACTION (HCI)
+FILE: MyGestureProject.py (Application Script)
+ROLE: Execution & User Interface Layer
+================================================================
+
+1. OVERVIEW
+This script serves as the main execution entry point for the 
+hand-tracking system. It utilizes the HandTrackingModule to 
+capture live video and provide real-time visual and text 
+feedback of hand movements [cite: 2026-01-04].
+
+2. KEY FEATURES
+A. Modular Integration:
+- Uses 'from HandTrackingModule import HandDetector' to leverage 
+  pre-built AI logic [cite: 2026-01-04].
+
+B. Robust Video Capture:
+- Employs 'cv2.CAP_DSHOW' to stabilize camera initialization 
+  on Windows systems [cite: 2026-01-04].
+- Includes a 'Safety Shield' check (if not success) to prevent 
+  crashes caused by empty camera frames [cite: 2026-01-04].
+
+C. Real-Time Data Stream:
+- Processes the video feed through the 'detector' object [cite: 2026-01-04].
+- Extracts a Landmark List (lm_list) containing spatial 
+  coordinates for all 21 hand joints [cite: 2026-01-04].
+
+3. FUNCTIONAL LOGIC
+- Tracking Target: Index Finger Tip (Landmark ID 8) [cite: 2026-01-04].
+- Console Output: Prints (x, y) pixel coordinates of the index 
+  finger to the terminal [cite: 2026-01-04].
+- Visual Output: Displays a live window titled "Image" with 
+  hand skeletal overlays [cite: 2026-01-04].
+
+4. CONTROLS
+- Run Script: Execute the file via Python interpreter.
+- Exit Program: Press the 'q' key while the video window 
+  is active to safely release hardware [cite: 2026-01-04].
+================================================================
