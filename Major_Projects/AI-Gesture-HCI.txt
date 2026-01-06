@@ -1,0 +1,43 @@
+==========================================================
+PROJECT: AI-GESTURE HCI (Human-Computer Interaction)
+AUTHOR: Abhinav Shrivastav
+MAJOR PROJECT:01
+==========================================================
+
+[1. CONCEPT DESCRIPTION]
+This project builds a real-time Hand Tracking engine. It 
+enables a computer to "see" and interpret human hand 
+gestures, forming the basis for touchless interfaces 
+and spatial computing (HCI).
+
+[2. TECHNICAL LOGIC]
+- Hand Landmarker: Uses a pre-trained ML model to identify 
+  21 specific points (landmarks) on a human hand.
+- RGB Conversion: OpenCV reads in BGR format, but 
+  Mediapipe requires RGB. The code performs this critical 
+  color-space transformation.
+- Coordinate Scaling: Converts normalized values (0 to 1) 
+  into actual pixel coordinates based on the camera 
+  resolution (Height x Width).
+
+[3. PYTHON CODE HIGHLIGHT]
+----------------------------------------------------------
+# Index Finger Tip Tracking (ID 8)
+for id, lm in enumerate(hand_lms.landmark):
+    h, w, c = img.shape
+    cx, cy = int(lm.x * w), int(lm.y * h)
+    if id == 8: 
+        cv2.circle(img, (cx, cy), 15, (255, 0, 255), cv2.FILLED)
+----------------------------------------------------------
+
+[4. AI-PM INSIGHTS]
+1. Latency Management: The script uses 'static_image_mode=False' 
+   to prioritize tracking speed over constant detection, 
+   reducing CPU load.
+2. UX Design: 'cv2.flip' is used to ensure the user sees a 
+   natural mirror reflection, which is critical for gesture 
+   accuracy and user comfort.
+
+==========================================================
+END OF DOCUMENTATION
+==========================================================
